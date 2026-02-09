@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "AgentCard",
+    "slug": "agentcard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "agentcard",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.arx.nfcreader"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F4F1EA",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.arx.nfcreader"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0A0B0F",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ],
+      [
+        "react-native-nfc-manager",
+        {
+          "nfcPermission": "Scan your Arx Burner or HaLo card to read its Ethereum address.",
+          "selectIdentifiers": [
+            "A0000009490148614C6F",
+            "481199130E9F01",
+            "D2760000850101",
+            "D2760000850100"
+          ],
+          "systemCodes": [],
+          "includeNdefEntitlement": true
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.4"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
